@@ -1,0 +1,113 @@
+<html>
+        <head>
+            <title>Student Details Management Portal</title>
+            <meta charset="UTF-8">
+    
+             <!-- Google Font Library-->
+             <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+                    
+            <!-- Bootstrap Libraries -->
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>       
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+            <!-- Link to the css file -->
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <!-- Main Heading -->
+            <div class="page-header">
+                <center><h1>STUDENT DETAILS MANAGEMENT PORTAL</h1></center>
+            </div>
+			
+            <!-- Data Entry Form -->
+			<div>
+			<img src="download.jpg" alt="PICTURE" height="280" width="350" style="float: right; margin-bottom: 0px; margin-top: 25px;margin-right: 325px; "/>
+			</div>
+            <div id="spoilerup" class="container">
+				<form action="javascript:void(0);" class="form-horizontal" method="POST" onsubmit="Add()">   
+                    <div class="form-group">
+                        <label for="add-roll" class="col-sm-2 control-label" >ID</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="add-roll" class="form-control" placeholder="Eg: 1510991205" pattern="[0-9]{10}" title="Roll Number can have only 10 digits!" required>
+                        </div>
+                   
+                        <label for="add-name" class="col-sm-2 control-label" style="margin-top: 45px;">NAME</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="add-name" class="form-control" style="margin-top: 45px;" placeholder="Eg: Garima" title="Name can have only 4 to 10 letters!" pattern="[a-zA-Z ]+[a-zA-Z]+[a-zA-Z ]+[a-zA-Z ]$" required>
+                        </div>
+						<br>
+						<label for="add-stream" class="col-sm-2 control-label" style="margin-top: 45px;">STREAM</label>
+                        <div class="col-sm-4">
+							<input type="text" id="add-stream" class="form-control" style="margin-top: 45px;" title="String having length between 2 and 5" pattern="[a-zA-Z]+[a-zA-Z]$" placeholder="STREAM" required>
+			      		</div>
+						<br>
+						<label for="add-year" class="col-sm-2 control-label" style="margin-left:3px;margin-top: 45px;margin-right:35px; margin-bottom: 0px">PASSOUT YEAR</label>
+                        <div class="col-sm-4">
+                            <input type="text" id="add-year" class="form-control" placeholder="Passout year" pattern="[0-9]{4}"  title="It should be 4 digit number" required style="margin-left:-40px;margin-top: 45px; margin-bottom: 0px">
+                        </div>
+					</div>
+					<br><br><br>
+					<div class="col-lg-offset-2 col-sm-1" style="margin-left:350px;margin-top:-30px;">
+                        <input type="submit" value="REGISTER" id="save_button" class="btn btn-success ">
+					</div>
+				</form>
+            </div>
+			<button onclick="myFunction()" class="btn btn-success " style="margin-top:-85px;margin-left: 800px ">SHOW DATA</button>
+						
+            <!-- Data Edit Form -->
+            <div id="spoiler"  class="container-fluid">
+                <form action="javascript:void(0);" class="form-horizontal" method="POST" id="saveEdit">
+                    <div class="row">
+                        <div class="col-sm-2">    
+                        </div>
+                        <div class="col-sm-2" id="edit-lavender">
+                            <input type="text" id="edit-roll" class="form-control">
+                        </div>
+                        <div class="col-sm-2" id="edit-lavenderblush">
+                            <input type="text" id="edit-name" class="form-control">
+                        </div>   
+                        <div class="col-sm-2" id="edit-lavender">
+                            <input type="text" id="edit-stream" class="form-control">
+                        </div> 
+                        <div class="col-sm-2" id="edit-lavenderblush">
+                            <input type="text" id="edit-year" class="form-control">
+                        </div> 
+                        <div class="col-lg-offset-0 col-sm-0">
+                            <input type="submit" value="Edit" class="btn btn-primary"/> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+                        </div>
+                    </div>
+                </form>
+            </div><br>
+
+    
+            <!--Table Listing Data -->
+            <div class="container" id="myDIV" style="display: none">
+                <table id="tableList" class="table table-hover">
+                    <tr>
+                        <thead>
+						<th>S.No.</th>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>STREAM</th>
+                        <th>YEAR</th>
+                        <th>EDIT/DELETE</th>
+                        <th>CHECKBOX</th>
+                        </thead>
+                    </tr>
+                    <tbody id="names"></tbody>
+                </table>
+				<button type="submit" class="btn btn-danger" onclick="DeleteMultipleRows()"  id="add" style="margin-bottom: 200;margin-left: 490;margin-right: 50;">DELETE SELECTED</button>
+			</div>
+			
+            <!-- Footer -->
+            <div id="bottom">
+                <div class ="container">
+                    <p class="text-muted credit">Coded By: Garima Nanda</p>
+                </div>
+            </div>
+			
+            <!-- Link to the javascript file -->
+            <script src="main.js"></script>
+        </body>
+    </html>

@@ -1,0 +1,48 @@
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Montserrat);
+
+/* Applying the font and color to all elements of HTML */
+*{
+    font-family: 'Open Sans', sans-serif !important;
+    color: rgb(0, 0, 0);
+}
+body {
+    background-color: lightyellow;
+}
+/* Deploying cursor as pointer */
+input[type='submit'], button, [aria-label]{
+    cursor: pointer;
+}
+
+/* Fading out */
+#spoiler{
+    display: none;
+}
+
+/* Data Entry Form */
+#spoilerup{
+    margin-left: 200;
+	margin-right: 200;
+	margin-top: 50;
+	font-size: 18px
+}
+
+
+/* Footer */
+#bottom{
+  position: fixed;
+  bottom: 0;
+  width: 110%;
+  margin: auto;
+  text-align: right;
+}
+
+/* Table Header */
+#tableList thead{
+    background: gray;
+}
+
+#tableList tbody { 
+  height:80em;  
+  overflow:scroll;
+}
